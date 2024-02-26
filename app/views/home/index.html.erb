@@ -1,0 +1,26 @@
+<%# <%= @data %> %>
+<div class="w-full mx-auto text-center">
+    <h1 class=" text-3xl font-bold underline">
+        <%=@data["name"]%>
+    </h1>
+    <p>
+    Min Temp: 
+    <%= @data["main"]["temp_min"] %>   
+    </p>
+    <%= @data["weather"][0]["id"] %>
+
+    Min Temp: 
+    <%= @data["main"]["temp_min"] %>
+
+    <br>
+    Max Temp: 
+    <%= @data["main"]["temp_max"] %>
+
+    <%# gets the weather Icon %>
+    <img src="https://openweathermap.org/img/wn/<%= @data["weather"][0]["icon"] %>@2x.png" />
+    <%# <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1> %>
+</div>
+
+
