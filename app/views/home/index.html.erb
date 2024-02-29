@@ -1,26 +1,83 @@
-<%# <%= @data %> %>
-<div class="w-full mx-auto text-center">
-    <h1 class=" text-3xl font-bold underline">
-        <%=@data["name"]%>
-    </h1>
-    <p>
-    Min Temp: 
-    <%= @data["main"]["temp_min"] %>   
-    </p>
-    <%= @data["weather"][0]["id"] %>
-
-    Min Temp: 
-    <%= @data["main"]["temp_min"] %>
-
-    <br>
-    Max Temp: 
-    <%= @data["main"]["temp_max"] %>
-
-    <%# gets the weather Icon %>
-    <img src="https://openweathermap.org/img/wn/<%= @data["weather"][0]["icon"] %>@2x.png" />
-    <%# <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1> %>
+<div>
+  <link href="../../assets/stylesheets/home.css" rel="stylesheet" />
+  <div class="home-container">
+    <div class="date-container" > 
+        <span> <%= @date %> </span>
+    </div>
+    <div class="home-container1">
+      <span class="home-location"><%=@data["name"] %></span>
+    </div>
+    <div class="home-container2"><h1 class="home-current-temp"><%=@temp %>c</h1></div>
+    <div class="home-container3">
+      <div class="home-air-quality-icon">
+        <img
+          alt="image"
+          src="https://play.teleporthq.io/static/svg/default-img.svg"
+          class="home-image"
+        />
+      </div>
+      <div class="home-uv-icon">
+        <img
+          alt="image"
+          src="https://play.teleporthq.io/static/svg/default-img.svg"
+          class="home-image1"
+        />
+      </div>
+      <div class="home-conditions-icon">
+        <img
+          alt="image"
+          src="https://openweathermap.org/img/wn/<%= @data["weather"][0]["icon"] %>@2x.png"
+          class="home-image2"
+        />
+      </div>
+      <div class="home-wind-icon">
+        <img
+          alt="image"
+          src="https://play.teleporthq.io/static/svg/default-img.svg"
+          class="home-image3"
+        />
+      </div>
+      <div class="home-percipitation-icon">
+        <img
+          alt="image"
+          src="https://play.teleporthq.io/static/svg/default-img.svg"
+          class="home-image4"
+        />
+      </div>
+    </div>
+    <div class="home-container4">
+      <div class="home-air-quality-data">
+        <span class="home-text">
+          <span><%=@data["clouds"]["all"]%> %</span>
+          <br />
+        </span>
+      </div>
+      <div class="home-uv-data"><span><%=@data["main"]["humidity"]%> %</span></div>
+      <div class="home-conditions-data">
+        <div class="home-description">
+          <span>
+            <span><%=@data["weather"][0]["description"]%></span>
+            <br />
+          </span>
+        </div>
+        <div class="home-container5">
+          <div class="home-container6">
+            <span class="home-text07">L: <%=@temp_low %></span>
+          </div>
+          <div class="home-container7">
+            <span class="home-text08">H: <%=@temp_high %></span>
+          </div>
+        </div>
+      </div>
+      <div class="home-wind-data">
+        <span>
+          <span><%=@wind_speed %>kph</span>
+          <br />
+        </span>
+      </div>
+      <div class="home-percipitation-data">
+        <span class="home-text09"><%=@rain%></span>
+      </div>
+    </div>
+  </div>
 </div>
-
-
