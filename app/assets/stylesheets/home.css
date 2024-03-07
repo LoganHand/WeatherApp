@@ -1,7 +1,6 @@
 body {
   background-image: linear-gradient(rgb(68, 65, 255), rgb(80, 80, 80));
 }
-
 .home-container {
   width: 100%;
   display: flex;
@@ -10,7 +9,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.home-container1 {
+.location-container {
   flex: 0 0 auto;
   height: auto;
   display: flex;
@@ -32,7 +31,7 @@ body {
   padding-right: var(--dl-space-space-unit);
   padding-bottom: var(--dl-space-space-unit);
 }
-.home-container2 {
+.current-temp-container {
   flex: 0 0 auto;
   display: flex;
   align-self: stretch;
@@ -49,65 +48,17 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
-.home-air-quality-icon {
+.dashboard-image {
+  width: 200px;
+  object-fit: cover;
+}
+.weather-icon {
   flex: 0 0 auto;
   display: flex;
   align-self: center;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-}
-.home-image {
-  width: 200px;
-  object-fit: cover;
-}
-.home-uv-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-self: center;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-.home-image1 {
-  width: 200px;
-  object-fit: cover;
-}
-.home-conditions-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-self: center;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-.home-image2 {
-  width: 200px;
-  object-fit: cover;
-}
-.home-wind-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-self: center;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-.home-image3 {
-  width: 200px;
-  object-fit: cover;
-}
-.home-percipitation-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-self: center;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-.home-image4 {
-  width: 200px;
-  object-fit: cover;
 }
 .home-container4 {
   flex: 0 0 auto;
@@ -117,19 +68,7 @@ body {
   padding-top: var(--dl-space-space-halfunit);
   justify-content: center;
 }
-.home-air-quality-data {
-  flex: 0 0 auto;
-  width: 200px;
-  display: flex;
-  align-self: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.home-text {
-  align-self: center;
-}
-.home-uv-data {
+.weather-data {
   flex: 0 0 auto;
   width: 200px;
   display: flex;
@@ -207,25 +146,4 @@ body {
 .home-text08 {
   align-self: flex-end;
   text-align: right;
-}
-.home-wind-data {
-  flex: 0 0 auto;
-  width: 200px;
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.home-percipitation-data {
-  flex: 0 0 auto;
-  width: 200px;
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.home-text12 {
-  align-self: center;
 }
