@@ -68,3 +68,4 @@ end
 
 gem "tailwindcss-rails", "~> 2.3"
 gem "ransack"
+gem "geocoder"
