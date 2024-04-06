@@ -1,5 +1,46 @@
-<%= form_with url: search_post_path, method: :get do |form| %>
-  <%= form.label :search, 'Search' %>
-  <%= form.text_field :search %>
-  <%= form.submit 'Submit' %>
-<% end %>
+<head>
+    <style>
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #6e8feb;
+        border: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .button:hover {background-color: #6e8feb;}
+
+    .button:active {
+        background-color: #4c72db;;
+    }
+    .textfield { 
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+    <%= form_with url: search_post_path, method: :get do |form| %>
+    <div class="search-container">
+        <%= form.text_field :search, class: "textfield" %>
+        <button class="button"> 
+            <%= form.submit 'Search' %>
+        </button>
+    </div>
+    <% end %>
+</body>

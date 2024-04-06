@@ -1,9 +1,9 @@
-<%= render 'search/form' %>
 <div class="mx-auto">
-  <div class="home-container">
-    <div class="date-container" > 
-        <span> <%= @date %> </span>
+    <div style="display: flex; justify-content: space-between;">
+      <div><%= render 'search/form' %></div>
+      <div><%= @date %></div>
     </div>
+  <div class="home-container">
     <div class="location-container">
       <span class="home-location"><%=@data["name"] %></span>
     </div>
