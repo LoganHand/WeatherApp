@@ -59,9 +59,10 @@ body {
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  min-width: 200px;
-  min-height: 200px;
+  width: 20%;
+  max-width: 250px;
 }
+
 .home-container4 {
   flex: 0 0 auto;
   width: 100%;
@@ -72,7 +73,8 @@ body {
 }
 .weather-data {
   flex: 0 0 auto;
-  width: 200px;
+  width: 20%;
+  max-width: 250px;
   display: flex;
   align-self: flex-start;
   align-items: center;
@@ -81,7 +83,8 @@ body {
 }
 .home-conditions-data {
   flex: 0 0 auto;
-  width: 200px;
+  width: 20%;
+  max-width: 250px;
   height: 100px;
   display: flex;
   position: relative;
