@@ -20,15 +20,15 @@ class HomeController < ApplicationController
     #checking if there is rain/snow data in the returned JSON
     @rain = @data["rain"]
     if @rain == nil
-        @rain = "None"
+        @rain = "0"
     else
-      @rain = @rain["1h"]
+      @rain = @rain["1h"].round
     end
     @snow = @data["snow"]
     if @snow == nil
-        @snow = "None"
+        @snow = "0"
     else
-      @snow = @snow["1h"]
+      @snow = @snow["1h"].round
     end
 
     # preparing the data for display

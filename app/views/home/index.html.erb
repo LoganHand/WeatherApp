@@ -1,13 +1,13 @@
 <div class="mx-auto">
     <div style="display: flex; justify-content: space-between;">
       <div><%= render 'search/form' %></div>
-      <div><%= @date %></div>
+      <div class="date-text" ><%= @date %></div>
     </div>
   <div class="home-container">
     <div class="location-container">
       <span class="home-location"><%=@data["name"] %></span>
     </div>
-    <div class="current-temp-container"><h1 class="home-current-temp"><%=@temp %>c</h1></div>
+    <div class="current-temp-container"><h1 class="home-current-temp"><%=@temp %>&deg;c</h1></div>
     <div class="home-container3">
       <div class="weather-icon">
         <%= image_tag 'Coverageicon.svg' %>
@@ -62,10 +62,10 @@
         </div>
         <div class="home-container5">
           <div class="home-container6">
-            <span class="home-text07">L: <%=@temp_low %></span>
+            <span class="temp-low">L: <%=@temp_low %></span>
           </div>
           <div class="home-container7">
-            <span class="text-right justify-end">H: <%=@temp_high %></span>
+            <span class="temp-high">H: <%=@temp_high %></span>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
       </div>
       <div class="weather-data">
         <span style="font-weight: bold;">Precipitation</span>
-        <span class="text-center"><%=@rain%></span>
+        <span class="text-center"><%=@rain%> mm</span>
       </div>
     </div>
   </div>
