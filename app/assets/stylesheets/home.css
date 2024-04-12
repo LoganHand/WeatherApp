@@ -8,6 +8,7 @@ body {
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 .location-container {
   flex: 0 0 auto;
@@ -155,15 +156,15 @@ body {
 
 .search_button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 9px 20px;
   font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #6e8feb;
-  border: none;
+  background-color: #ffffff00;
+  border: 1px solid black;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 15px;
@@ -180,6 +181,8 @@ body {
   border-bottom-right-radius: 0;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  border: 1px solid black;
+  padding: 8.25px;
 }
 .search-container {
   display: flex;

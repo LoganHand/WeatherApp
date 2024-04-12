@@ -16,11 +16,26 @@
         <%= image_tag 'Humidityicon.svg' %>
       </div>
       <div class="weather-icon">
-        <img
-          alt="image"
-          src="https://openweathermap.org/img/wn/<%= @data["weather"][0]["icon"] %>@2x.png"
-          class="dashboard-image"
-        />
+      <% case @data["weather"][0]["icon"].slice(0..1) %>
+        <% when "01" %>
+          <%= image_tag 'Sunicon.svg' %>
+        <% when "02" %>
+          <%= image_tag 'Partlycloudyicon.svg' %>
+        <% when "03" %>
+          <%= image_tag 'Cloudyicon.svg' %>
+        <% when "04" %>
+          <%= image_tag 'Cloudyicon.svg' %>
+        <% when "09" %>
+          <%= image_tag 'Rainicon.svg' %>
+        <% when "10" %>
+          <%= image_tag 'Rainicon.svg' %>
+        <% when "11" %>
+          <%= image_tag 'Thundericon.svg' %>
+        <% when "13" %>
+          <%= image_tag 'Snowcloudicon.svg' %>
+        <% when "50" %>
+          <%= image_tag 'Fogicon.svg' %>
+      <% end %>
       </div>
       <div class="weather-icon">
         <%= image_tag 'Windicon.svg' %>
@@ -31,16 +46,17 @@
     </div>
     <div class="home-container4">
       <div class="weather-data">
-        <span class="text-center">
+          <span style="font-weight: bold;" >Cloud Coverage</span>
           <span><%=@data["clouds"]["all"]%> %</span>
-          <br />
-        </span>
       </div>
-      <div class="weather-data"><span><%=@data["main"]["humidity"]%> %</span></div>
+      <div class="weather-data">
+        <span style="font-weight: bold;" >Humidity</span>
+        <span><%=@data["main"]["humidity"]%> %</span>
+      </div>
       <div class="home-conditions-data">
         <div class="home-description">
           <span>
-            <span><%=@data["weather"][0]["description"]%></span>
+            <span style="font-weight: bold;" ><%=@data["weather"][0]["description"]%></span>
             <br />
           </span>
         </div>
@@ -54,12 +70,11 @@
         </div>
       </div>
       <div class="weather-data">
-        <span>
-          <span><%=@wind_speed %>kph</span>
-          <br />
-        </span>
+        <span style="font-weight: bold;" >Wind Speed</span>
+        <span><%=@wind_speed %>kph</span>
       </div>
       <div class="weather-data">
+        <span style="font-weight: bold;">Precipitation</span>
         <span class="text-center"><%=@rain%></span>
       </div>
     </div>
