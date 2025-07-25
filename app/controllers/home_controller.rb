@@ -1,5 +1,7 @@
 require 'uri'
 require 'net/http'
+#get openweather api key from ruby credentials
+def api_key = Rails.application.credentials.dig(:openweather, :api_key)
 class HomeController < ApplicationController
   def index
     #recives passed data containing long & lat in an array from location search
@@ -8,10 +10,10 @@ class HomeController < ApplicationController
       #splits the coordinates to prepare them for the open weather api call
       lat = @location.first
       long = @location.second
-      url = "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&units=metric&appid=c8882a9aaf685422d65b897817196730"
+      url = "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&units=metric&appid=#{api_key}"
     else
       #default location is used which is calgary alberta
-      url = "https://api.openweathermap.org/data/2.5/weather?lat=51.05&lon=-114.09&units=metric&appid=c8882a9aaf685422d65b897817196730"
+      url = "https://api.openweathermap.org/data/2.5/weather?lat=51.05&lon=-114.09&units=metric&appid=#{api_key}"
     end
     uri = URI(url)
     res = Net::HTTP.get_response(uri)

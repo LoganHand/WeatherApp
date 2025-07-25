@@ -14,23 +14,18 @@ body {
   flex: 0 0 auto;
   height: auto;
   display: flex;
+  width: 100%;
   position: relative;
   align-self: center;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center; 
 }
+
 .home-location {
   color: var(--dl-color-gray-black);
-  padding: var(--dl-space-space-halfunit);
   font-size: 80px;
-  align-self: center;
-  margin-top: var(--dl-space-space-halfunit);
-  margin-left: var(--dl-space-space-halfunit);
-  padding-top: var(--dl-space-space-unit);
-  margin-right: var(--dl-space-space-halfunit);
-  padding-left: var(--dl-space-space-unit);
-  margin-bottom: var(--dl-space-space-halfunit);
-  padding-right: var(--dl-space-space-unit);
-  padding-bottom: var(--dl-space-space-unit);
+  margin: 0; 
+  padding: var(--dl-space-space-unit); 
 }
 .current-temp-container {
   flex: 0 0 auto;
@@ -40,7 +35,7 @@ body {
   justify-content: center;
 }
 .home-current-temp {
-  font-size: 50px;
+  font-size: 40px;
 }
 .home-container3 {
   flex: 0 0 auto;
@@ -61,7 +56,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 20%;
-  max-width: 250px;
+  max-width: 175px;
 }
 
 .home-container4 {
@@ -122,6 +117,7 @@ body {
 }
 .date-text {
   font-size: x-large;
+  font-family: 'Times New Roman', serif;
 }
 .temp-low {
   width: auto;
@@ -183,4 +179,132 @@ body {
 .search-container {
   display: flex;
   align-items: center;
+}
+input[type="checkbox"] {
+	position: absolute;
+	margin: auto;
+	border-radius: 10px;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	outline: none;
+  border: #000000;
+  border-width: 2px;
+	height: 30px;
+	width: 70px;
+	background-color: #000000;
+	transition: 0.3s;
+}
+input[type="checkbox"]:before {
+	font-size: 1.5em;
+	content: "F";
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 10px;
+	background-color: #000000;
+	color: #ffffff;
+	top: 3px;
+	left: 3px;
+	transition: 0.3s;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Poppins", sans-serif;
+  font-size: large;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+input[type="checkbox"]:checked {
+	background: -o-linear-gradient(315deg, #000000, #000000);
+	background: linear-gradient(135deg, #000000, #000000);
+}
+input[type="checkbox"]:checked:before {
+	content: "C";
+	left: 42px;
+	color: #ffffff;
+}
+
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: .5em;
+  padding: .125em;
+  background-image: linear-gradient(to bottom, #d0c4b8, #f5ece5);
+  box-shadow: 
+    0 1px 1px rgb(255 255 255 / .6),
+  ;
+}
+
+.toggle-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: .375em;
+  width: 3em;
+  height: 1.5em;
+  background-color: #e1dacd;
+  box-shadow: 
+    inset 0 0 .0625em .125em rgb(255 255 255 / .2),
+    inset 0 .0625em .125em rgb(0 0 0 / .4),
+  ;
+  transition: background-color .4s linear;
+  
+  .toggle-checkbox:checked + & {
+    background-color: #f3b519;
+  }
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: .0625em;
+  border-radius: .3125em;
+  width: 1.375em;
+  height: 1.375em;
+  background-color: #e4ddcf;
+  box-shadow:
+    inset 0 -.0625em .0625em .125em rgb(0 0 0 / .1),
+    inset 0 -.125em .0625em rgb(0 0 0 / .2),
+    inset 0 .1875em .0625em rgb(255 255 255 / .3),
+    0 .125em .125em rgb(0 0 0 / .5),
+  ;
+  transition: left .4s/*cubic-bezier(.65, 1.35, .5, 1)*/;
+  
+  .toggle-checkbox:checked + .toggle-container > & {
+    left: 1.5625em;
+  }
+}
+
+.toggle-button-circles-container {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: .125em;
+  position: absolute;
+  margin: 0 auto;
+}
+
+.toggle-button-circle {
+  border-radius: 50%;
+  width: .125em;
+  height: .125em;
+  background-image: radial-gradient(circle at 50% 0, #f6f0e9, #bebcb0);
 }
